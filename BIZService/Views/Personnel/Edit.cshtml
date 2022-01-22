@@ -1,0 +1,48 @@
+﻿@model BIZService.Models.Order
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+<fieldset>
+    <legend>Футболист</legend>
+
+    @Html.HiddenFor(model => model.OrderID)
+
+    <p>
+        Услуга <br />
+        @Html.EditorFor(model => model.Service)
+    </p>
+
+    <p>
+        Имя <br />
+        @Html.EditorFor(model => model.UserName)
+    </p>
+
+    <p>
+        фамилия <br />
+        @Html.EditorFor(model => model.UserSurname)
+    </p>
+    <p>
+        Телефон <br />
+        @Html.EditorFor(model => model.ContactPhone)
+    </p>
+    <p>
+        id <br />
+        @Html.EditorFor(model => model)
+    </p>
+
+
+    <p>
+        <input type="submit" value="Сохранить" />
+
+    </p>
+</fieldset>
+}
+<div>
+    @Html.ActionLink("Вернуться к списку заказов", "Orders")
+</div>

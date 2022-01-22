@@ -12,7 +12,10 @@ namespace BIZService.Models
         public string UserName { get; set; }
         public string UserSurname { get; set; }
         public string ContactPhone { get; set; } // Контактный номер заказчика
-        public int PersonnelID { get; set; } // ID исполнителя
-        public Personnel Personnels { get; set; }
+
+
+        public int? PersonnelsID { get; set; } // ID исполнителя
+        public Personnel Personnels { get; set; } // Персонал компании
+     
     }
 }

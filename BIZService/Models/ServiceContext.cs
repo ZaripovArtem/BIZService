@@ -15,5 +15,6 @@ namespace BIZService.Models
          {
             Database.EnsureCreated(); // Если БД отсутствует - автоматически создает ее
          }
+
     } 
 }
