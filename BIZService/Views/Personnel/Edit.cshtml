@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
 <fieldset>
-    <legend>Футболист</legend>
+    <legend>Заказ</legend>
 
     @Html.HiddenFor(model => model.OrderID)
 
@@ -33,7 +33,7 @@
     </p>
     <p>
         id <br />
-        @Html.EditorFor(model => model)
+        @Html.EditorFor(model => model.PersonnelsID)
     </p>
 
 

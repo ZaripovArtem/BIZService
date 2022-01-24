@@ -24,10 +24,6 @@
     {
         <tbody>
             <tr>
-                @*<td>@personnel.UserName</td>
-        <td>@personnel.UserSurname</td>
-        <td>@personnel.Service</td>
-        <td>@personnel.ContactPhone</td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Service)
                 </td>
@@ -44,7 +40,7 @@
                     @Html.DisplayFor(modelItem => item.Personnels.Name)
                     @Html.DisplayFor(modelItem => item.Personnels.Surname)
                 </td>
-                <td>
+                @*<td>
                     @using (Html.BeginForm("Edit", "Personnel"))
                       {
                         <a class="btn btn-outline-primary"
@@ -59,8 +55,12 @@
                            asp-action="Delete"
                            asp-route-id="@item.OrderID">Удалить</a>
                     }
-                    <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
-                </td>
+                </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
+            </td>
             </tr>
         </tbody>
     }

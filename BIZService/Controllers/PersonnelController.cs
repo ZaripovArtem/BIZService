@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using BIZService.Models;
 using BIZService.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace BIZService.Controllers
 {
@@ -24,7 +24,7 @@ namespace BIZService.Controllers
         public ActionResult Index()
         {
             return View(db.Personnels.ToList());
-            
+
         }
 
         public ActionResult Orders(int id)
@@ -51,13 +51,14 @@ namespace BIZService.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Bind("OrderID, Service, UserName, UserSurname, ContactPhone, PersonnelsID")]
         public async Task<IActionResult> Edit(int id, [Bind("OrderID, Service, UserName, UserSurname, ContactPhone, PersonnelsID")] Order order)
         {
             if (id != order.OrderID)
             {
                 return NotFound();
             }
-            
+
             if (ModelState.IsValid)
             {
                 try
@@ -65,44 +66,19 @@ namespace BIZService.Controllers
                     db.Update(order);
                     await db.SaveChangesAsync();
                 }
-                catch(DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException)
                 {
                     throw;
                 }
                 return RedirectToAction(nameof(Orders));
             }
-            return View(order);
-        }
-
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var order = await db.Orders
-                .FirstOrDefaultAsync(o => o.OrderID == id);
-            if (order == null)
-            {
-                return NotFound();
-            }
-
-            return View(order);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var order = await db.Orders.FindAsync(id);
-            db.Orders.Remove(order);
-            await db.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View("Order");
         }
 
 
-        ////////////////////
+
+
+
 
 
 
