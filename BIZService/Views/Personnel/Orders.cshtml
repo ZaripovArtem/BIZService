@@ -40,27 +40,16 @@
                     @Html.DisplayFor(modelItem => item.Personnels.Name)
                     @Html.DisplayFor(modelItem => item.Personnels.Surname)
                 </td>
-                @*<td>
+                <td>
                     @using (Html.BeginForm("Edit", "Personnel"))
-                      {
+                    {
                         <a class="btn btn-outline-primary"
                            asp-action="Edit"
                            asp-route-id="@item.OrderID">Изменить</a>
-                     }
-                </td>
-                <td>
-                    @using (Html.BeginForm("Delete", "Personnel"))
-                    {
-                        <a class="btn btn-outline-danger"
-                           asp-action="Delete"
-                           asp-route-id="@item.OrderID">Удалить</a>
                     }
-                </td>*@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
-            </td>
+                </td>
+         
+            
             </tr>
         </tbody>
     }

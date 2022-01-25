@@ -32,8 +32,9 @@
         @Html.EditorFor(model => model.ContactPhone)
     </p>
     <p>
-        id <br />
-        @Html.EditorFor(model => model.PersonnelsID)
+        Мастер <br />
+        @*@Html.EditorFor(model => model.PersonnelsID)*@
+        @Html.DropDownListFor(model => model.PersonnelsID, ViewBag.Personnels as SelectList)
     </p>
 
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using BIZService.Models;
 using BIZService.ViewModels;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BIZService.Controllers
 {
@@ -41,6 +41,10 @@ namespace BIZService.Controllers
             if (id == null)
                 return NotFound();
             var order = await db.Orders.FindAsync(id);
+
+            SelectList personnels = new SelectList(db.Personnels, "ID", "Name", order.OrderID);
+            ViewBag.Personnels = personnels;
+
             if (order == null)
             {
                 return NotFound();
@@ -74,13 +78,6 @@ namespace BIZService.Controllers
             }
             return View("Order");
         }
-
-
-
-
-
-
-
 
     }
 }
