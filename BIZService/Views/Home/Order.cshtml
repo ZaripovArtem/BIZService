@@ -1,0 +1,32 @@
+﻿@model BIZService.Models.Order
+
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.ServiceName, "Название услуги")
+    <br />
+    @Html.EditorFor(model => model.ServiceName)
+    <br />
+    @Html.LabelFor(model => model.Surname, "Фамилия")
+    <br />
+    @Html.EditorFor(model => model.Surname)
+    <br />
+    @Html.LabelFor(model => model.Name, "Имя")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br />
+    @Html.LabelFor(model => model.Patronymic, "Отчество")
+    <br />
+    @Html.EditorFor(model => model.Patronymic)
+    <br />
+    @Html.LabelFor(model => model.PhoneNumber, "Номер телефона")
+    <br />
+    @Html.EditorFor(model => model.PhoneNumber)
+    <br />
+
+    <input type="submit" value="Отправить" />
+}
+
