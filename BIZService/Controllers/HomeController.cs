@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using BIZService.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using CustomIdentityApp.Models;
 
 namespace BIZService.Controllers
 {
@@ -16,24 +18,30 @@ namespace BIZService.Controllers
     {
 
         private ServiceContext db;
+        //private UserContext udb;
+        private UserManager<User> _userManager;
 
-        public HomeController(ServiceContext context)
+
+
+        public HomeController(ServiceContext context, UserManager<User> userManager)
         {
             db = context;
+            _userManager = userManager;
         }
 
 
         public async Task<IActionResult> Index()
         {
             return View(await db.Orders.ToListAsync());
-            //return View(db.Services.ToList());
+          
+            
         }
         
 
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Privacy()
         {
-            return View();
+            return View(_userManager.Users.ToList());
         }
         
         

@@ -26,7 +26,7 @@ namespace CustomIdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.Email, Name = model.Name, Surname = model.Surname };
+                User user = new User { Email = model.Email, UserName = model.Email, Name = model.Name, Surname = model.Surname, Number = model.Number};
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -69,7 +69,7 @@ namespace CustomIdentityApp.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Personnel");
                     }
                 }
                 else
@@ -89,6 +89,6 @@ namespace CustomIdentityApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
+        
     }
 }

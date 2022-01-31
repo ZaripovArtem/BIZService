@@ -26,5 +26,6 @@ namespace CustomIdentityApp.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Подтвердить пароль")]
         public string PasswordConfirm { get; set; }
+        public int Number { get; set; } ///
     }
 }

@@ -1,0 +1,48 @@
+﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Название услуги</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Отчество</th>
+            <th scope="col">Марка и модель</th>
+            <th scope="col">Мастер</th>
+            <th scope="col">Статус</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+           @foreach (var item in Model)
+            {
+               <tbody>
+                    <tr>
+                        <td>
+                            @item.ServiceName
+                        </td>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Surname
+                        </td>
+                        <td>
+                            @item.Patronymic
+                        </td>
+                        <td>
+                            @item.MarkAndModel
+                        </td>
+                        <td>
+                            @item.NumberMaster
+                        </td>
+                        <td>
+                            @item.Status
+                        </td>
+                    </tr>
+               </tbody>
+            }
+
+</table>
+

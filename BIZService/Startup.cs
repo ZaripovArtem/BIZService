@@ -39,6 +39,8 @@ namespace BIZService
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
+
+
             services.AddControllersWithViews();
         }
 

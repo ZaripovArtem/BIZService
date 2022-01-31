@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using BIZService.Models;
+using CustomIdentityApp.Models;
 
 namespace BIZService.Models
 {
@@ -11,6 +12,7 @@ namespace BIZService.Models
     {
         public DbSet<Service> Services { get; set; }
         public DbSet<Order> Orders { get; set; }
+        
         public ServiceContext(DbContextOptions<ServiceContext> options)
            : base(options)
         {
