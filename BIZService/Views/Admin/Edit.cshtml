@@ -1,0 +1,54 @@
+﻿@model BIZService.Models.Order
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Заказ</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            Услуга <br />
+            @Html.EditorFor(model => model.ServiceName)
+        </p>
+
+        <p>
+            Имя <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+            фамилия <br />
+            @Html.EditorFor(model => model.Surname)
+        </p>
+        <p>
+            Отчество <br />
+            @Html.EditorFor(model => model.Patronymic)
+        </p>
+        <p>
+            Номер телефона <br />
+            @Html.EditorFor(model => model.PhoneNumber)
+        </p>
+        <p>
+            Марка и модель <br />
+            @Html.EditorFor(model => model.MarkAndModel)
+        </p>
+         <p>
+             Статус заказа <br />
+           @Html.EditorFor(model => model.Status)
+        </p>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Вернуться к списку заказов", "Index")
+</div>

@@ -22,31 +22,48 @@ namespace BIZService.Controllers
         }
         public IActionResult Index()
         {
-            /////////////////////////////////////////////////////////
-            //IQueryable<Order> orders = from c in db.Orders
-            //                           where c.NumberMaster == 1
-            //                           select c;
-
-
-            //return View(orders);
-            // LINQ запрос на вывод всех заказов с id мастера = 1
-            //////////////////////////////////////////////////////
-
-
-            //var orders = db.Orders.Include(p => p.Users)
-
-            
-
-            return View(db.Orders.ToList());
-
+              return View(db.Orders.ToList().OrderByDescending(i => i.Id));
         }
 
-        public async Task<IActionResult> Edit(string OrderId)
+        public async Task<IActionResult> Edit(int? id)
         {
-            Order order = await db.Orders.FindAsync(OrderId);
-            if (order != null)
-                return View(order);
-            return NotFound();
+            if (id == null)
+                return NotFound();
+
+            var order = await db.Orders.FindAsync(id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id, ServiceName, Surname, Name, Patronymic, PhoneNumber, Status, MarkAndModel, Addition, NumberMaster")] Order order)
+        {
+            if (id != order.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Update(order);
+                    await db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+
+
+            return View("Index");
         }
     }
 }

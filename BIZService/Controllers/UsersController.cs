@@ -31,7 +31,6 @@ namespace CustomIdentityApp.Controllers
                 bool IsNumberUnique = _userManager.Users.Any(item => item.Number == model.Number);
 
                 User user = new User { Email = model.Email, UserName = model.Email, Name = model.Name, Surname = model.Surname, Number = model.Number};
-                // добавить проверку на то, что поле с паролем == null
                 if(IsNumberUnique == true)
                     ModelState.AddModelError("Number", "Такой номер уже занят другим пользователем");
                 else
@@ -91,7 +90,6 @@ namespace CustomIdentityApp.Controllers
                     user.Number = model.Number; ////
 
                     if (IsNumberUnique == true && IsNumberThis == false)
-                       // return RedirectToAction("Edit"); // вместо этой строчки нужно добавить новую ошибку
                        ModelState.AddModelError("Number", "Такой номер уже занят другим пользователем");
 
 
