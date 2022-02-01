@@ -14,9 +14,11 @@ namespace BIZService.Controllers
     public class AdminController : Controller
     {
         private ServiceContext db;
-        public AdminController(ServiceContext context)
+        private readonly UserManager<User> _userManager;
+        public AdminController(ServiceContext context, UserManager<User> userManager)
         {
             db = context;
+            _userManager = userManager;
         }
         public IActionResult Index()
         {
@@ -31,9 +33,20 @@ namespace BIZService.Controllers
             //////////////////////////////////////////////////////
 
 
-            return View(db.Orders.ToList());
+            //var orders = db.Orders.Include(p => p.Users)
+
             
+
+            return View(db.Orders.ToList());
+
         }
 
+        public async Task<IActionResult> Edit(string OrderId)
+        {
+            Order order = await db.Orders.FindAsync(OrderId);
+            if (order != null)
+                return View(order);
+            return NotFound();
+        }
     }
 }

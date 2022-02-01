@@ -28,23 +28,37 @@ namespace CustomIdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                bool IsNumberUnique = _userManager.Users.Any(item => item.Number == model.Number);
+
                 User user = new User { Email = model.Email, UserName = model.Email, Name = model.Name, Surname = model.Surname, Number = model.Number};
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
+                // добавить проверку на то, что поле с паролем == null
+                if(IsNumberUnique == true)
+                    ModelState.AddModelError("Number", "Такой номер уже занят другим пользователем");
                 else
                 {
-                    foreach (var error in result.Errors)
+                    if (model.Password == null)
+                        ModelState.AddModelError("Password", "Введите пароль для пользователя");
+                    else
                     {
-                        ModelState.AddModelError(string.Empty, error.Description);
+                            var result = await _userManager.CreateAsync(user, model.Password);
+                            if (result.Succeeded)
+                            {
+                                return RedirectToAction("Index");
+                            }
+                            else
+                            {
+                                foreach (var error in result.Errors)
+                                {
+                                    ModelState.AddModelError(string.Empty, error.Description);
+                                }
+                            }
                     }
+                    
                 }
             }
             return View(model);
         }
-
+        ///сюда///////////////////////////////////////////////////////////
         public async Task<IActionResult> Edit(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -59,28 +73,48 @@ namespace CustomIdentityApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditUserViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
                 User user = await _userManager.FindByIdAsync(model.Id);
                 if (user != null)
                 {
+                    bool IsNumberUnique = _userManager.Users.Any(item => item.Number == model.Number);
+
+                    int? ThisNumber = user.Number;
+                    bool IsNumberThis = ThisNumber == model.Number;
+
                     user.Email = model.Email;
                     user.UserName = model.Email;
                     user.Name = model.Name;
                     user.Surname = model.Surname;
+                    user.Number = model.Number; ////
 
-                    var result = await _userManager.UpdateAsync(user);
-                    if (result.Succeeded)
-                    {
-                        return RedirectToAction("Index");
-                    }
+                    if (IsNumberUnique == true && IsNumberThis == false)
+                       // return RedirectToAction("Edit"); // вместо этой строчки нужно добавить новую ошибку
+                       ModelState.AddModelError("Number", "Такой номер уже занят другим пользователем");
+
+
+                    //if (IsNumberThis == true)
+                    //    ModelState.AddModelError("Number", "Одинаковый номер");
+
+
                     else
                     {
-                        foreach (var error in result.Errors)
+                        var result = await _userManager.UpdateAsync(user);
+                        if (result.Succeeded)
                         {
-                            ModelState.AddModelError(string.Empty, error.Description);
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError(string.Empty, error.Description);
+                            }
                         }
                     }
+
                 }
             }
             return View(model);

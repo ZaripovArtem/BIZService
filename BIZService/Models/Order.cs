@@ -15,7 +15,7 @@ namespace BIZService.Models
         public string Name { get; set; }
         public string Patronymic { get; set; }
         public string PhoneNumber { get; set; }
-        public string Status { get; set; } // статус услуги
+        public string Status { get; set; } // статус услуги (заменил string на id)
         public string MarkAndModel { get; set; } // модель и марка
         public string Addition { get; set; } // Примечания к услуге
         public int? NumberMaster { get; set; } // Номер мастера

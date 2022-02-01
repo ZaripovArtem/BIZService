@@ -38,8 +38,13 @@
                             @item.NumberMaster
                         </td>
                         <td>
+                            @if (item.Status == null)
+                            {
+                                <b>Обработка</b>
+                            }
                             @item.Status
                         </td>
+
                     </tr>
                </tbody>
             }

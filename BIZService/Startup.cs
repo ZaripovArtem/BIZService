@@ -31,6 +31,11 @@ namespace BIZService
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            //services.AddIdentity<User, IdentityRole>(opts => {
+            //    opts.User.RequireUniqueEmail = true; // уникальный 
+            //})
+            //    .AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
 
