@@ -13,7 +13,7 @@ namespace CustomIdentityApp.Controllers
     public class UsersController : Controller
     {
         UserManager<User> _userManager;
-
+        //1
         public UsersController(UserManager<User> userManager)
         {
             _userManager = userManager;
