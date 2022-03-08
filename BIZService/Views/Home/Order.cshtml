@@ -4,29 +4,60 @@
     ViewBag.Title = "Добавление пользователя";
 }
 
+<div class="ZdarovaKarta"> 
+ <iframe id="map_920486422" frameborder="0" width="100%" height="600px" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe><script type="text/javascript">(function(e,t){var r=document.getElementById(e);r.contentWindow.document.open(),r.contentWindow.document.write(atob(t)),r.contentWindow.document.close()})("map_920486422", "PGJvZHk+PHN0eWxlPgogICAgICAgIGh0bWwsIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgfQogICAgICAgIGh0bWwsIGJvZHksICNtYXAgewogICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgIH0KICAgICAgICAuYnVsbGV0LW1hcmtlciB7CiAgICAgICAgICAgIHdpZHRoOiAyMHB4OwogICAgICAgICAgICBoZWlnaHQ6IDIwcHg7CiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7CiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsKICAgICAgICAgICAgYm9yZGVyOiA0cHggc29saWQgIzAyODFmMjsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlOwogICAgICAgIH0KICAgICAgICAucGVybWFuZW50LXRvb2x0aXAgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lOwogICAgICAgICAgICBib3gtc2hhZG93OiBub25lOwogICAgICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4OwogICAgICAgICAgICBjb2xvcjogIzI2MjYyNjsKICAgICAgICB9CiAgICAgICAgLnBlcm1hbmVudC10b29sdGlwOmJlZm9yZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQogICAgICAgIC5kZy1wb3B1cF9oaWRkZW5fdHJ1ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KICAgICAgICAubGVhZmxldC1jb250YWluZXIgLmxlYWZsZXQtcG9wdXAgLmxlYWZsZXQtcG9wdXAtY2xvc2UtYnV0dG9uIHsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgd2lkdGg6IDIwcHg7CiAgICAgICAgICAgIGhlaWdodDogMjBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4OwogICAgICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICB9CiAgICA8L3N0eWxlPjxkaXYgaWQ9Im1hcCI+PC9kaXY+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iaHR0cHM6Ly9tYXBzLmFwaS4yZ2lzLnJ1LzIuMC9sb2FkZXIuanM/cGtnPWZ1bGwmYW1wO3NraW49bGlnaHQiPjwvc2NyaXB0PjxzY3JpcHQ+KGZ1bmN0aW9uKGUsdCl7dmFyIHI9SlNPTi5wYXJzZShlKSxuPUpTT04ucGFyc2UodCk7ZnVuY3Rpb24gYShlKXtyZXR1cm4gZGVjb2RlVVJJQ29tcG9uZW50KGF0b2IoZSkuc3BsaXQoIiIpLm1hcChmdW5jdGlvbihlKXtyZXR1cm4iJSIrKCIwMCIrZS5jaGFyQ29kZUF0KDApLnRvU3RyaW5nKDE2KSkuc2xpY2UoLTIpfSkuam9pbigiIikpfURHLnRoZW4oZnVuY3Rpb24oKXt2YXIgZT1ERy5tYXAoIm1hcCIse2NlbnRlcjpbbi5sYXQsbi5sb25dLHpvb206bi56b29tfSk7REcuZ2VvSlNPTihyLHtzdHlsZTpmdW5jdGlvbihlKXt2YXIgdCxyLG4sYSxvO3JldHVybntmaWxsQ29sb3I6bnVsbD09PSh0PWUpfHx2b2lkIDA9PT10P3ZvaWQgMDp0LnByb3BlcnRpZXMuZmlsbENvbG9yLGZpbGxPcGFjaXR5Om51bGw9PT0ocj1lKXx8dm9pZCAwPT09cj92b2lkIDA6ci5wcm9wZXJ0aWVzLmZpbGxPcGFjaXR5LGNvbG9yOm51bGw9PT0obj1lKXx8dm9pZCAwPT09bj92b2lkIDA6bi5wcm9wZXJ0aWVzLnN0cm9rZUNvbG9yLHdlaWdodDpudWxsPT09KGE9ZSl8fHZvaWQgMD09PWE/dm9pZCAwOmEucHJvcGVydGllcy5zdHJva2VXaWR0aCxvcGFjaXR5Om51bGw9PT0obz1lKXx8dm9pZCAwPT09bz92b2lkIDA6by5wcm9wZXJ0aWVzLnN0cm9rZU9wYWNpdHl9fSxwb2ludFRvTGF5ZXI6ZnVuY3Rpb24oZSx0KXtyZXR1cm4icmFkaXVzImluIGUucHJvcGVydGllcz9ERy5jaXJjbGUodCxlLnByb3BlcnRpZXMucmFkaXVzKTpERy5tYXJrZXIodCx7aWNvbjpmdW5jdGlvbihlKXtyZXR1cm4gREcuZGl2SWNvbih7aHRtbDoiPGRpdiBjbGFzcz0nYnVsbGV0LW1hcmtlcicgc3R5bGU9J2JvcmRlci1jb2xvcjogIitlKyI7Jz48L2Rpdj4iLGNsYXNzTmFtZToib3ZlcnJpZGUtZGVmYXVsdCIsaWNvblNpemU6WzIwLDIwXSxpY29uQW5jaG9yOlsxMCwxMF19KX0oZS5wcm9wZXJ0aWVzLmNvbG9yKX0pfSxvbkVhY2hGZWF0dXJlOmZ1bmN0aW9uKGUsdCl7ZS5wcm9wZXJ0aWVzLmRlc2NyaXB0aW9uJiZ0LmJpbmRQb3B1cChhKGUucHJvcGVydGllcy5kZXNjcmlwdGlvbikse2Nsb3NlQnV0dG9uOiEwLGNsb3NlT25Fc2NhcGVLZXk6ITB9KSxlLnByb3BlcnRpZXMudGl0bGUmJnQuYmluZFRvb2x0aXAoYShlLnByb3BlcnRpZXMudGl0bGUpLHtwZXJtYW5lbnQ6ITAsb3BhY2l0eToxLGNsYXNzTmFtZToicGVybWFuZW50LXRvb2x0aXAifSl9fSkuYWRkVG8oZSl9KX0pKCdbeyJ0eXBlIjoiRmVhdHVyZSIsInByb3BlcnRpZXMiOnsiY29sb3IiOiIjZmYwMDUyIiwidGl0bGUiOiIwS0hSZ3RDK0lPS0VsakVnS05DYTBKalFvaWs9IiwiZGVzY3JpcHRpb24iOiJQSEErMEpIUXZ0QzcwWXpSaU5DdzBZOGcwTHJSZ05DdzBZSFF2ZEN3MFk4Z05UVUswS0RRdGRDMjBMalF2Q0RSZ05DdzBMSFF2dEdDMFlzNklEZzZNREFnTFNBeE9Ub3dNQXJRbXRDKzBMM1JndEN3MExyUmd0QzkwWXZRdVNEUXZkQyswTHpRdGRHQUlOR0MwTFhRdTlDMTBZVFF2dEM5MExBNklEZzVNRGt6TURnNE5ERXdQQzl3UGc9PSIsInpJbmRleCI6MTAwMDAwMDAwMH0sImdlb21ldHJ5Ijp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbNDkuMTM0MzM3LDU1Ljc5Njg1NF19LCJpZCI6NDkzfSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6eyJjb2xvciI6IiNmZjAwNDciLCJ0aXRsZSI6IjBLSFJndEMrSU9LRWxqSWdLTkNZMEtEUXJkQ2lLUT09IiwiZGVzY3JpcHRpb24iOiJQSEErMEpyUXNOR0EwTHZRc0NEUXZOQ3cwWURRdXRHQjBMQXVDdENnMExYUXR0QzQwTHdnMFlEUXNOQ3gwTDdSZ3RHTE9pQTRPakF3SUMwZ01UZzZNREFLMEpyUXZ0QzkwWUxRc05DNjBZTFF2ZEdMMExrZzBMM1F2dEM4MExYUmdDRFJndEMxMEx2UXRkR0UwTDdRdmRDd09pQTRPVFl3TURVM09URTFOand2Y0Q0PSIsInpJbmRleCI6MTAwMDAwMDAwMH0sImdlb21ldHJ5Ijp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbNDkuMTEzNjEsNTUuNzk3MjE3XX0sImlkIjo4MjZ9XScsJ3sibGF0Ijo1NS43OTAzMjg0MDI2MTQyMiwibG9uIjo0OS4xMzQwMzU0OTI4MTYzMiwiem9vbSI6MTR9Jyk8L3NjcmlwdD48c2NyaXB0IGFzeW5jPSIiIHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbS9ndGFnL2pzP2lkPVVBLTE1ODg2NjE2OC0xIj48L3NjcmlwdD48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+KGZ1bmN0aW9uKGUpe2Z1bmN0aW9uIHQoKXtkYXRhTGF5ZXIucHVzaChhcmd1bWVudHMpfXdpbmRvdy5kYXRhTGF5ZXI9d2luZG93LmRhdGFMYXllcnx8W10sdCgianMiLG5ldyBEYXRlKSx0KCJjb25maWciLGUpLHdpbmRvdy5ndGFnPXR9KSgnVUEtMTU4ODY2MTY4LTEnKTwvc2NyaXB0PjwvYm9keT4=")</script>
+ </div>
+ <div class="MainContent"> 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.ServiceName, "Название услуги")
+    <div class="q1">
+   
+     @Html.TextBoxFor(model => model.ServiceName, new { @class = "Usluga-text-field", @placeholder = "Название услуги" })
+    </div>
+    <style>
+      
+    </style>
     <br />
-    @Html.EditorFor(model => model.ServiceName)
-    <br />
-    @Html.LabelFor(model => model.Surname, "Фамилия")
-    <br />
-    @Html.EditorFor(model => model.Surname)
-    <br />
-    @Html.LabelFor(model => model.Name, "Имя")
-    <br />
-    @Html.EditorFor(model => model.Name)
-    <br />
-    @Html.LabelFor(model => model.Patronymic, "Отчество")
-    <br />
-    @Html.EditorFor(model => model.Patronymic)
-    <br />
-    @Html.LabelFor(model => model.PhoneNumber, "Номер телефона")
-    <br />
-    @Html.EditorFor(model => model.PhoneNumber)
-    <br />
+    
 
-    <input type="submit" value="Отправить" />
+    @Html.TextBoxFor(model => model.Surname,  new { @class = "Surname-text-field", @placeholder = "Фамилия" })
+        @* @Html.TextBoxFor(model => model.ServiceName, new { @class = "Usluga-text-field", @placeholder = "Название услуги" })*@
+    <br />
+  
+    @Html.TextBoxFor(model => model.Name ,new { @class = "Name-text-field", @placeholder = "Имя" })
+    <br />
+    @Html.TextBoxFor(model => model.Patronymic,new { @class = "Otchestvo-text-field", @placeholder = "Отчество" })
+   
+   
+    <br />
+    @Html.TextBoxFor(model => model.PhoneNumber,new { @class = "NomerTelefona-text-field", @placeholder = "Номер телефона" })
+    <br />
+  
+     @Html.TextBoxFor(model => model.MarkAndModel,new { @class = "NumAvto-text-field", @placeholder = "Марка Автомобиля" })
+    <br />
+ 
+    <br />
+    <h4> Дополнение</h4>
+     @Html.TextAreaFor(model => model.Addition, 9, 10, null)
+    <br />
+    @*@Html.EditorFor(model => model.Addition)
+    <br />*@
+   
+    <div class="Button"> 
+
+
+          <input type="submit" value="Отправить" />
+            
+    </div>
+   
+   <style>
+       .MainContent
+       {
+           width:300px;
+           height:50%;
+       }
+   </style>
+   
+
 }
 

@@ -5,17 +5,29 @@
 
 @if (User.Identity.IsAuthenticated)
 {
+    <div class="AuthorizedName">
     <p>@User.Identity.Name</p>
-    <p>Number</p>
+    <a href="~/Personnel">Личный кабинет</a>
 
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>
+    </div>
+
+    <style>
+        .AuthorizedName
+        {
+        position:absolute;
+        right:30px
+        }
+    </style>
+
+
 }
 else
 {
     <a asp-controller="Account" asp-action="Login">Вход</a>
-    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+   
 }
 
 @*@foreach (var s in Model)
@@ -26,13 +38,21 @@ else
     <td>@s.Price</td>
     <br />
 }*@
-
+@*
 <table class="table">
     <tr><td>Название услуги</td><td>Имя</td><td>Фамилия</td></tr>
     @foreach (var item in Model)
     {
         <tr><td>@item.ServiceName</td><td>@item.Name</td><td>@item.Surname</td></tr>
     }
-</table>
-
+</table>*@
+<div class="Zapis"> 
 <a asp-controller="Home" asp-action="Order">Записаться на услугу</a>
+  </div>
+  <style>
+      .Zapis
+      {
+          position:absolute;
+          left:50%;
+      }
+  </style>
