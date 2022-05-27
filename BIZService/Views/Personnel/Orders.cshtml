@@ -6,7 +6,17 @@
 @foreach (var item in Model)
 {
     @*<tr><td>@item.ServiceName</td><td>@item.Name</td><td>@item.Surname</td></tr>*@
+    <div class="qwe">
     @item.ServiceName
+    
     @item.Name
     @item.MarkAndModel
+    @item.PhoneNumber
+    </div>
 }
+<style>
+    .qwe
+    {
+        display:flex;
+    }
+</style>

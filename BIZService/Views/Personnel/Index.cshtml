@@ -1,22 +1,298 @@
-﻿Hello
-@User.Identity.Name
+﻿
 @foreach(var p in Model)
 {
-  @p.Email
+  <h2> С возвращением @p.Email</h2> 
 }
-<a href="~/Personnel/Orders">
+
+
+
+<div class="block111">
+    <a class="txt1" href="~/Personnel/Orders">
     Активные заказы
 </a>
-<a href="~/Roles">
+<h4 class="txtdop2">Просмотрите активные заказы на данный момент</h4>
+</div>
+
+<div class="block222">
+
+<a class="txt2" href="~/Roles">
    Редактирование прав доступа
 </a>
-<a href="~/Users">
+<h4 class="txtdop2">Редактируйте права доступа пользователей</h4>
+</div>
+
+<div class="block333">
+<a class="txt3" href="~/Users">
    Редактирование пользователей
 </a>
+<h4 class="txtdop2">Редактируйте аккаунты всех пользователей</h4>
 
+</div>
 
-<a href="~/Admin">
+<div class="block444">
+<a class="txt4" href="~/Admin">
    Список всех заказов
 </a>
+<h4 class="txtdop2">История списка всех заказов</h4>
 
+</div>
+
+<style>
+    .txtdop2
+    {
+        position:absolute;
+        bottom:10px;
+        visibility:hidden;
+    }
+    .txt1
+    {
+        width: 1204px;
+height: 272px;
+font-size:50px;
+border-radius: 12px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+    }
+    .txt2
+    {
+        text-align:center;
+        width: 474px;
+height: 272px;
+font-size:50px;
+border-radius: 12px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+    }
+    .txt1:hover{
+        text-decoration:none;
+     
+    }
+     .txt1:hover{
+        text-decoration:none;
+     
+    }
+    .block111:hover
+    {
+      border-radius:2px;
+   transform:scale(1.05);
+transition:1s;
+padding-top:10px;
+
+    }
+    .block111:hover h4{
+        visibility:visible;
+        transition:1s;
+    }
+
+
+
+
+
+
+     .block111:not(hover)
+     {
+         transition:1s;
+     }
+ 
+    .block222:hover
+    {
+      border-radius:2px;
+   transform:scale(1.05);
+transition:1s;
+padding-top:10px;
+
+    }
+    .block222:hover h4{
+        visibility:visible;
+        transition:1s;
+    }
+
+
+
+
+
+
+     .block222:not(hover)
+     {
+         transition:1s;
+     }
+
+
+
+      .txt3:hover{
+        text-decoration:none;
+     
+    }
+    .block333:hover
+    {
+      border-radius:2px;
+   transform:scale(1.05);
+transition:1s;
+padding-top:10px;
+
+    }
+    .block333:hover h4{
+        visibility:visible;
+        transition:1s;
+    }
+
+
+
+
+
+
+     .block333:not(hover)
+     {
+         transition:1s;
+     }
+
+      .txt4:hover{
+        text-decoration:none;
+     
+    }
+    .block444:hover
+    {
+      border-radius:2px;
+   transform:scale(1.05);
+transition:1s;
+padding-top:10px;
+
+    }
+    .block444:hover h4{
+        visibility:visible;
+        transition:1s;
+    }
+
+
+
+
+
+
+     .block444:not(hover)
+     {
+         transition:1s;
+     }
+
+    .txt3
+    {
+        width: 474px;
+height: 272px;
+font-size:50px;
+border-radius: 12px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+    }
+    .txt4
+    {
+        width: 1224px;
+height: 292px;
+font-size:50px;
+border-radius: 12px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+    }
+.block111
+{
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+padding-top:100px;
+position: absolute;
+width: 1244px;
+height: 312px;
+left: 358px;
+top: 531px;
+
+border: 1px solid #000000;
+border-radius: 12px;
+}
+.block222
+{box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+padding-top:100px;
+gap: 10px;
+position: absolute;
+width: 494px;
+height: 292px;
+left: 358px;
+top: 192px;
+
+border: 1px solid #000000;
+border-radius: 12px;
+}
+.block333
+{box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+padding-top:100px;
+position: absolute;
+width: 494px;
+height: 292px;
+left: 1078px;
+top: 192px;
+
+border: 1px solid #000000;
+border-radius: 12px;
+}
+.block444
+{
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+gap: 10px;
+padding-top:100px;
+position: absolute;
+width: 1244px;
+height: 312px;
+left: 358px;
+top: 864px;
+
+border: 1px solid #000000;
+border-radius: 12px;
+}
+
+</style>
 

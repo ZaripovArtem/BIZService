@@ -62,7 +62,7 @@ namespace BIZService.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Completed");
         }
 
 
@@ -72,6 +72,10 @@ namespace BIZService.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult Competed()
+        {
+            return View();
         }
     }
 }
